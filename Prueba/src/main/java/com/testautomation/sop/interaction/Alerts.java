@@ -3,15 +3,19 @@ package com.testautomation.sop.interaction;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.testautomation.sop.utils.EnvironmentConstants.ENTRADA_TEXTO_ALERTA;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
 
 public class Alerts implements Interaction {
+
+
 
 
     private Target elemento;
@@ -27,9 +31,14 @@ public class Alerts implements Interaction {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                WaitUntil.the(elemento, isVisible()).forNoMoreThan(80).seconds(),
+                WaitUntil.the(elemento, isEnabled()).forNoMoreThan(300).seconds(),
                 JavaScriptClick.on(elemento));
+
+
+
+
         try {
+
             cambiarAlertas(nombreAlerta);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -46,6 +55,7 @@ public class Alerts implements Interaction {
 
         switch (nombreAlerta){
             case "Click" :
+                Wait.aTime(2000);
                 getDriver().switchTo().alert().accept();
                 break;
 
@@ -55,10 +65,12 @@ public class Alerts implements Interaction {
                 break;
 
             case "confirm" :
+                Wait.aTime(2000);
                 getDriver().switchTo().alert().dismiss();
                 break;
 
             case "box" :
+                Wait.aTime(2000);
                 getDriver().switchTo().alert().sendKeys(ENTRADA_TEXTO_ALERTA);
                 getDriver().switchTo().alert().accept();
                 break;

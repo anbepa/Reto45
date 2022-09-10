@@ -15,6 +15,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPres
 public class AccionVentanasEmergentes implements Task {
 
 
+
     @Override
     public <T extends Actor> void performAs(T actor) {
 
@@ -23,13 +24,14 @@ public class AccionVentanasEmergentes implements Task {
                 WaitUntil.the(LINK_MENU_ALERTSFRAME, isPresent()).forNoMoreThan(80).seconds(),
                 JavaScriptClick.on(LINK_MENU_ALERTSFRAME),
                 JavaScriptClick.on(LINK_MENU_ALERTS),
-                  Alerts.deTipo(BOTON_ALERTA,"Click"),
-                  Alerts.deTipo(BOTON_ALERTA_TIEMPO, "ClickTime"),
-                  Alerts.deTipo(BOTON_ALERTA_CONFIRMAR,"confirm"),
-                  Alerts.deTipo(BOTON_ALERTA_ENTRADA, "box")
 
+                Alerts.deTipo(BOTON_ALERTA,"Click"),
+                Alerts.deTipo(BOTON_ALERTA_TIEMPO, "ClickTime"),
+                Alerts.deTipo(BOTON_ALERTA_CONFIRMAR,"confirm"),
+                Alerts.deTipo(BOTON_ALERTA_ENTRADA, "box")
 
         );
+
 
 
     }

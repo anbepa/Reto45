@@ -1,7 +1,8 @@
 package com.testautomation.sop.tasks;
 
 
-import com.testautomation.sop.models.WidgetsFechaHoraModel;
+
+import com.testautomation.sop.models.entitys.DatosPruebaFormModels;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -14,11 +15,11 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPres
 public class BuscarFechaHora implements Task {
 
 
-    private WidgetsFechaHoraModel widgetsFechaModel;
-
-    public BuscarFechaHora(WidgetsFechaHoraModel widgetsFechaModel) {
-        this.widgetsFechaModel = widgetsFechaModel;
+    public BuscarFechaHora(DatosPruebaFormModels datosPruebaFormModels) {
+        this.datosPruebaFormModels = datosPruebaFormModels;
     }
+
+    private DatosPruebaFormModels datosPruebaFormModels;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -26,16 +27,17 @@ public class BuscarFechaHora implements Task {
         actor.attemptsTo(
 
                 WaitUntil.the(ENTRADA_FECHAHORA, isPresent()).forNoMoreThan(80).seconds(),
-                Enter.theValue(widgetsFechaModel.getDateAndTime()).into(ENTRADA_FECHAHORA)
+                Enter.theValue(datosPruebaFormModels.getDate()+ ", "+ datosPruebaFormModels.getTime()).into(ENTRADA_FECHAHORA)
 
         );
 
 
     }
 
-    public static BuscarFechaHora registrandoFechaHora(WidgetsFechaHoraModel widgetsFechaModel) {
 
-        return Tasks.instrumented(BuscarFechaHora.class,widgetsFechaModel);
+    public static BuscarFechaHora registrandoFechaHora(DatosPruebaFormModels datosPruebaFormModels) {
+
+        return Tasks.instrumented(BuscarFechaHora.class, datosPruebaFormModels);
     }
 
 

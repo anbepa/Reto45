@@ -9,11 +9,11 @@ Prueba tecnica
 
 
 ## Correr Test
-* Ejecutar runners uno por uno se ubican en la  siguiente ruta
+* Ejecutar   runner  para lanzar los tres flujos
 
-Ruta :\src\test\java\com\testautomation\runners\flujos
+Ruta :\src\test\java\com\testautomation\runners\flujos\FlujosPaginaDemoqa
 
-los runners a jecutar son:
+los flujos   a jecutar son:
 
 - AlertsFlujo03
 - ElementsFlujo01 

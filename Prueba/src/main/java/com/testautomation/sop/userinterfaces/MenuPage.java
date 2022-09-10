@@ -10,6 +10,6 @@ public class MenuPage {
     public static final Target LINK_MENU_DATAPICKER= Target.the("link menu datapicker").located(By.xpath("//span[text() = 'Date Picker']//parent::li"));
     public static final Target LINK_MENU_ALERTSFRAME= Target.the("link menu alerts").located(By.xpath("//div[@class='category-cards']//child::div[@class='card mt-4 top-card'][3]"));
     public static final Target LINK_MENU_ALERTS= Target.the("link menu alerts").located(By.xpath("//span[text() = 'Alerts']//parent::li"));
-
+    private MenuPage(){}
 
 }

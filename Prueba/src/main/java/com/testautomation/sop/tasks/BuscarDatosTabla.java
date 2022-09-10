@@ -1,7 +1,8 @@
 package com.testautomation.sop.tasks;
 
 
-import com.testautomation.sop.models.SearchModel;
+
+import com.testautomation.sop.models.entitys.DatosPruebaFormModels;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -14,11 +15,11 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 public class BuscarDatosTabla implements Task {
 
 
-    private SearchModel searchModel;
-
-    public BuscarDatosTabla(SearchModel searchModel) {
-        this.searchModel = searchModel;
+    public BuscarDatosTabla(DatosPruebaFormModels datosPruebaFormModels) {
+        this.datosPruebaFormModels = datosPruebaFormModels;
     }
+
+    private DatosPruebaFormModels datosPruebaFormModels;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -27,16 +28,16 @@ public class BuscarDatosTabla implements Task {
 
 
                 WaitUntil.the(ENTRADA_BUSQUEDA_DATOS, isVisible()).forNoMoreThan(80).seconds(),
-                Enter.theValue(searchModel.getTypeSearch()).into(ENTRADA_BUSQUEDA_DATOS)
+                Enter.theValue(datosPruebaFormModels.getTypeSearch()).into(ENTRADA_BUSQUEDA_DATOS)
 
         );
 
 
     }
 
-    public static BuscarDatosTabla porCampoBusqueda(SearchModel searchModel) {
+    public static BuscarDatosTabla porCampoBusqueda(DatosPruebaFormModels datosPruebaFormModels) {
 
-        return Tasks.instrumented(BuscarDatosTabla.class,searchModel);
+        return Tasks.instrumented(BuscarDatosTabla.class, datosPruebaFormModels);
     }
 
 

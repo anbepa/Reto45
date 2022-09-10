@@ -11,5 +11,5 @@ public class CrearDatosPage {
     public static final Target ENTRADA_SALARIO= Target.the("entrada salario").located(By.id("salary"));
     public static final Target ENTRADA_DEPARTAMENTO= Target.the("entrada departamento").located(By.id("department"));
     public static final Target BOTON_GUARDAR_DATOS= Target.the("boton guardar datos").located(By.id("submit"));
-
+    private CrearDatosPage(){}
 }

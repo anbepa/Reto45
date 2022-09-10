@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/alerts_flujo03.feature"},
+        features = {"src/test/resources/features/"},
          glue = {"com.testautomation.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 
 )
-public class AlertsFlujo03 {
+public class FlujosPaginaDemoqa {
 }
