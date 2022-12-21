@@ -1,0 +1,76 @@
+group 'co.com.bancolombia.certificacion.saf'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+javadoc.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.2.12")
+        classpath("net.serenity-bdd:serenity-single-page-report:2.1.2")
+        classpath("net.serenity-bdd:serenity-json-summary-report:2.1.2")
+    }
+}
+
+ext {
+    slf4jVersion = '1.7.30'
+    serenityCoreVersion = '2.1.10'
+    serenityCucumberVersion = '1.9.49'
+    junitVersion = '4.13.1'
+    assertJVersion = '3.23.1'
+    logbackVersion = '1.2.10'
+}
+
+
+dependencies {
+    implementation "ch.qos.logback:logback-classic:${logbackVersion}",
+    "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+    "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}",
+    "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
+    "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
+    "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+    "junit:junit:${junitVersion}",
+    "org.junit.platform:junit-platform-launcher:1.8.2",
+    "org.junit.jupiter:junit-jupiter-engine:5.8.2",
+    "org.junit.vintage:junit-vintage-engine:5.8.2",
+    "org.assertj:assertj-core:${assertJVersion}"
+
+    testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}",
+            "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+            "junit:junit:${junitVersion}",
+            "org.junit.platform:junit-platform-launcher:1.8.2",
+            "org.junit.jupiter:junit-jupiter-engine:5.8.2",
+            "org.junit.vintage:junit-vintage-engine:5.8.2",
+            "org.assertj:assertj-core:${assertJVersion}"
+}
+
+
+
+serenity {
+    reports = ['single-page-html','json-summary']
+}
+
+gradle.startParameter.continueOnFailure = true
+
+tasks.withType(Test){
+    systemProperties = System.properties
+
+}
+
