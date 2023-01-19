@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Create payment application" tests="14" skipped="0" failures="0" errors="0" timestamp="2022-11-06T00:04:56" hostname="50HW017581" time="65.911">
+  <properties/>
+  <testcase name="Se realizará un pago por valor de $ 720.283.974,01 con el fin de simular la cancelación de 8 obligaciones que abarquen los 5 primeros escenarios de aplicaciones de pago" classname="Create payment application" time="53.83"/>
+  <testcase name="Se realizará un pago por valor de $ 720.283.974,01 con el fin de simular la cancelación de 8 obligaciones que abarquen los 5 primeros escenarios de aplicaciones de pago" classname="Create payment application" time="0.753"/>
+  <testcase name="Se realizará un pago por valor de $ 720.283.974,01 con el fin de simular la cancelación de 8 obligaciones que abarquen los 5 primeros escenarios de aplicaciones de pago" classname="Create payment application" time="0.767"/>
+  <testcase name="Se realizará un pago por valor de $ 720.283.974,01 con el fin de simular la cancelación de 8 obligaciones que abarquen los 5 primeros escenarios de aplicaciones de pago" classname="Create payment application" time="0.788"/>
+  <testcase name="se realizará un segundo pago para simular el escenario 6 de aplicaciones de pago" classname="Create payment application" time="0.975"/>
+  <testcase name="se realizará un segundo pago para simular el escenario 6 de aplicaciones de pago" classname="Create payment application" time="0.799"/>
+  <testcase name="se realizará un segundo pago para simular el escenario 6 de aplicaciones de pago" classname="Create payment application" time="0.788"/>
+  <testcase name="se realizará un segundo pago para simular el escenario 6 de aplicaciones de pago" classname="Create payment application" time="0.948"/>
+  <testcase name="se realizará un segundo pago para simular el escenario 7 de aplicaciones de pago" classname="Create payment application" time="0.997"/>
+  <testcase name="se realizará un segundo pago para simular el escenario 7 de aplicaciones de pago" classname="Create payment application" time="0.963"/>
+  <testcase name="se realizará un segundo pago para simular el escenario 7 de aplicaciones de pago" classname="Create payment application" time="1.164"/>
+  <testcase name="se realizará un segundo pago para simular el escenario 8 de aplicaciones de pago" classname="Create payment application" time="0.997"/>
+  <testcase name="se realizará un segundo pago para simular el escenario 8 de aplicaciones de pago" classname="Create payment application" time="1.273"/>
+  <testcase name="se realizará un segundo pago para simular el escenario 8 de aplicaciones de pago" classname="Create payment application" time="0.817"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,7 @@
+{
+  "obligationIds": [1794,1795,1816,1849,1850],
+  "processStartDate": null,
+  "processEndDate": "#{E2E-ProcessEndDate}#",
+  "isAll": true,
+  "isView": false
+}

@@ -1,0 +1,2 @@
+iduser,productModality,modality,payer,provider,thirdParty,startDate,endDate,businessDaySetting,liability,calculationType,calculationWay,refundByPrepayment,rateChange
+1,prueba,Con recurso,JUAN JOSE BEDOYA VELASQUEZ,CARMEN RAFAEL FERRER MANTILLA,FRANCISCO FELIPE ALVAREZ ROSAS,08172021,08172021,Si,A nivel de factura,Exponencial,Formula,Pagador,Periodico

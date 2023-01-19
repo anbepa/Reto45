@@ -1,0 +1,3 @@
+iduser,name,base,businessDaySetting,calculate,calculationDays,calculationType,calculationWay,currency,liability,accountingFrequency,operationType,paymentType,rateChange,virtualBranch,nameBaseProduct,acronym,counterpart,holder,modality,refundByPrepayment,sequence,thirdParty
+1,casoPrueba5,360,Si,Si,360,Exponencial,Formula,ALL,A nivel de factura,Diaria,Credito,Bullet,Fijo,Si,prueba1,CCR,Pagador,Pagador,Con recurso,Pagador,1001,Plataforma
+2,,360,Si,Si,360,Exponencial,Formula,ALL,A nivel de factura,Diaria,Credito,Bullet,Fijo,Si,casoPrueba5,,Pagador,Pagador,Con recurso,Pagador,1001,Plataforma

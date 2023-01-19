@@ -1,0 +1,89 @@
+group 'co.com.bancolombia.certificacion.saf'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+javadoc.options.encoding = 'UTF-8'
+
+repositories {
+    maven { url "https://artifactory.apps.bancolombia.com/maven-bancolombia/" }
+}
+
+buildscript {
+    repositories {
+        maven { url "https://artifactory.apps.bancolombia.com/maven-bancolombia/" }
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.2.12")
+        classpath("net.serenity-bdd:serenity-single-page-report:2.1.2")
+        classpath("net.serenity-bdd:serenity-json-summary-report:2.1.2")
+    }
+}
+
+ext {
+    slf4JVersion = '1.7.30'
+    cucumberVersion = '1.9.49'
+    serenityCucumberVersion = '1.9.49'
+    serenityCoreVersion = '2.1.10'
+}
+
+
+dependencies {
+
+
+
+    implementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}",
+            "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
+
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.20'
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    implementation group: 'co.com.tcs', name: 'sapgui',  version: '2.1.7'
+
+
+
+    testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+            "org.assertj:assertj-core:3.15.0",
+            "org.slf4j:slf4j-simple:${slf4JVersion}",
+            "io.github.bonigarcia:webdrivermanager:5.0.3",
+            "org.assertj:assertj-core:3.8.0",
+            "org.slf4j:slf4j-simple:1.7.21"
+
+
+
+}
+
+
+
+serenity {
+    reports = ['single-page-html','json-summary']
+}
+
+gradle.startParameter.continueOnFailure = true
+
+tasks.withType(Test){
+    systemProperties = System.properties
+
+}
+
+task credentials(type: Test){
+
+    systemProperty 'login.user', System.getProperty('login.user')
+    systemProperty 'login.pass', System.getProperty('login.pass')
+    systemProperty 'userBD', System.getProperty('userBD')
+    systemProperty 'passBD', System.getProperty('passBD')
+}
+
+
+credentials.finalizedBy(aggregate)

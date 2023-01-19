@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Create payment application" skipped="0" tests="1" time="67.98" timestamp="2022-12-19 05:49:54"><testcase name="Realizar anulacion de un aplicacion de pago realizado de forma manual uno a uno que simulan el proceso de aplicacion de pago"><failure message="&#10;Expected: is &lt;true&gt;&#10;     but: was &lt;false&gt;" type="java.lang.AssertionError">
+Expected: is &lt;true&gt;
+     but: was &lt;false&gt;</failure><system-err>
+Expected: is &lt;true&gt;
+     but: was &lt;false&gt;&#13;
+co.com.bancolombia.certification.saf.stepdefinitions.createincome.CollectionStepDefinitions.deberiaVerLasObligacionesEnSusEstadosInicialesAntesDeRealizarElProcesoDeAplicacionDePago(CollectionStepDefinitions.java:143)&#13;
+✽.Deberia ver las obligaciones en sus estados iniciales antes de realizar el proceso de aplicacion de pago(src/test/resources/features/Collections/create_collections.feature:38)&#13;
+</system-err></testcase></testsuite>

@@ -1,0 +1,1 @@
+Proyecto que contiene pruebas manuales 

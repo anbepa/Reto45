@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">ms_income</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="abeb9a99bb6cc81ff71da478127126803702a92136ea22afe74d51e7e9bc41e5.html">Create Payment Application</a></span>
+                > <span class="truncate-60"><a
+                    href="3afe5cdac57d708946805d578ecd6e2872156ae8d91a62f5e6e501af19c6c21d.html">Realizar un pago de forma manual uno a uno para cancelar 5 obligaciones que simulen el proceso de aplicacion de pago </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 19-12-2022 17:47</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Create Payment Application </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                As a Financial Services Management<br />
+i need create to collections on the page
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="a80a32586dfec3fd69a71a38672eb7e0159c020c73f4262ce7bf7c4c9ddc291b.html">280090
+                                    (UserStory)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Realizar un pago de forma manual uno a uno para cancelar 5 obligaciones que simulen el proceso de aplicacion de pago
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5443200783c57c29322cd8412f569802d8a18b49d8db3d095447b3a75a01b5c3.png" title=" Given That the user enter to the page" width="1920"/>
+                <img src="5443200783c57c29322cd8412f569802d8a18b49d8db3d095447b3a75a01b5c3.png" title=" Administrator opens the https://saf-qa.apps.ambientesbc.com/disbursements" width="1920"/>
+                <img src="5443200783c57c29322cd8412f569802d8a18b49d8db3d095447b3a75a01b5c3.png" title=" Given That the user enter to the page (completed)" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Given Que se tiene unas ogligaciones  adecuadas  &quot;Obligation1&quot;" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator reset field" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator reset field (completed)" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator wait" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator wait (completed)" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator reset field" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator reset field (completed)" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Given Que se tiene unas ogligaciones  adecuadas  &quot;Obligation1&quot; (completed)" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" And Se  ejecuta los cargos financieros para las obligaciones" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator apply finance charges" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" User details should be correct" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator apply finance charges (completed)" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" And Se  ejecuta los cargos financieros para las obligaciones (completed)" width="1920"/>
+                <img src="48dc3fe83926cc0ef618fd81281d876b510497bf312798d11b45ddfa2ffe905a.png" title=" When El usuario crea un recaudo manual uno a uno con los siguientes datos
+| value | receptionTime | receptionDate | clientReferent | clientBeneficiary | payment | collectionChannel |
+| 565404132 | 12:00 A.M | 12192022 | 8506902438 | 8506902438 | Efectivo | Sucursal virtual empresas |" width="1920"/>
+                <img src="48dc3fe83926cc0ef618fd81281d876b510497bf312798d11b45ddfa2ffe905a.png" title=" Administrator create collection" width="1920"/>
+                <img src="48dc3fe83926cc0ef618fd81281d876b510497bf312798d11b45ddfa2ffe905a.png" title=" Administrator clicks on option income register" width="1920"/>
+                <img src="fa134c3d83a86b9e97087b2356f019973ff9414b073d643894f1d8ecbd2c61c7.png" title=" Administrator clicks on option income register (completed)" width="1920"/>
+                <img src="14ec7f66a5ee3086add7183f6cb00007313854079ccc03a202019e5689c72ace.png" title=" Administrator clicks on OptionRegisterCollection" width="1920"/>
+                <img src="72255db9c972cb1ddf0e1eed36c9dd66314310fd6cdb1a23ac4d53218ff3903b.png" title=" Administrator clicks on OptionRegisterCollection (completed)" width="1920"/>
+                <img src="72255db9c972cb1ddf0e1eed36c9dd66314310fd6cdb1a23ac4d53218ff3903b.png" title=" Administrator clicks on SelectOptionSingleLoad" width="1920"/>
+                <img src="5d6b90b0ef46ab01149756251f33c23a7aae836bb557032c31010e9a1f9eec49.png" title=" Administrator clicks on SelectOptionSingleLoad (completed)" width="1920"/>
+                <img src="5d6b90b0ef46ab01149756251f33c23a7aae836bb557032c31010e9a1f9eec49.png" title=" Administrator clicks on SelectOptionNext" width="1920"/>
+                <img src="98dcfebcd4963d3ccc3cef2e0dd30a37b7c5873ee4cfd7b0664f46c46dae5855.png" title=" Administrator clicks on SelectOptionNext (completed)" width="1920"/>
+                <img src="e34a8e3cf86cdceb133ac95fd69b25df1f1cd987e8f16d5e31db349673bd692c.png" title=" Administrator enters '12192022' into Date Reception" width="1920"/>
+                <img src="7f16a2c383758c3304132488da93895faccccd3baf385e4992e3a0c6b72f0fc2.png" title=" Administrator enters '12192022' into Date Reception (completed)" width="1920"/>
+                <img src="7f16a2c383758c3304132488da93895faccccd3baf385e4992e3a0c6b72f0fc2.png" title=" Administrator clicks on Hour Reception" width="1920"/>
+                <img src="87bc38ca9ded670710b37acd6efcc42301c9cf0c3271939d2b2be3567a73bb89.png" title=" Administrator clicks on Hour Reception (completed)" width="1920"/>
+                <img src="87bc38ca9ded670710b37acd6efcc42301c9cf0c3271939d2b2be3567a73bb89.png" title=" Administrator clicks on Select Hour" width="1920"/>
+                <img src="5fe97638f4776ff85cb329def94db03f22f77177fbd81cd0419b672808600a3b.png" title=" Administrator clicks on Select Hour (completed)" width="1920"/>
+                <img src="791a3cddc05490381a2fe328a70846fb3e108d31c9ac83888182b0bb3b0753ae.png" title=" Administrator clicks on City Reception" width="1920"/>
+                <img src="b14b8bb9ed5d3e1e1ad330d31ad69cc0e01af37c4bac2d5117b7439c75f8cb6c.png" title=" Administrator clicks on City Reception (completed)" width="1920"/>
+                <img src="fd9f0233b946c622a2452a84ad484ffde24cca8acdb8957d4fd33b82c7d231e0.png" title=" Administrator clicks on Select City" width="1920"/>
+                <img src="2e8cb7ff5d1357740e66f3cf05e47aee6032c9e2b1f7e54f9b9162cebd080bcf.png" title=" Administrator clicks on Select City (completed)" width="1920"/>
+                <img src="2e8cb7ff5d1357740e66f3cf05e47aee6032c9e2b1f7e54f9b9162cebd080bcf.png" title=" Administrator clicks on Client Referente" width="1920"/>
+                <img src="15838e08bf0dc1de43da80958065fcab94bc53af6805fc8f06d85b0fdba89e1f.png" title=" Administrator clicks on Client Referente (completed)" width="1920"/>
+                <img src="15838e08bf0dc1de43da80958065fcab94bc53af6805fc8f06d85b0fdba89e1f.png" title=" Administrator clicks on select referent client " width="1920"/>
+                <img src="316de455d5649c45a7d1624218f84262e0175aaa4c6042c54e0b8c56688a8f50.png" title=" Administrator clicks on select referent client  (completed)" width="1920"/>
+                <img src="316de455d5649c45a7d1624218f84262e0175aaa4c6042c54e0b8c56688a8f50.png" title=" Administrator clicks on Select client beneficiary" width="1920"/>
+                <img src="adf77dd3d59022964fbf3663c0aa87b7aad01c95f216d222f827158fe19116d7.png" title=" Administrator clicks on Select client beneficiary (completed)" width="1920"/>
+                <img src="adf77dd3d59022964fbf3663c0aa87b7aad01c95f216d222f827158fe19116d7.png" title=" Administrator clicks on Select client beneficiary" width="1920"/>
+                <img src="e2ffa5571daaf67cee5a70f38a7e6b2f7812662dbeb6f28bfb20077dfae6e6d7.png" title=" Administrator clicks on Select client beneficiary (completed)" width="1920"/>
+                <img src="e2ffa5571daaf67cee5a70f38a7e6b2f7812662dbeb6f28bfb20077dfae6e6d7.png" title=" Administrator clicks on Option Payment" width="1920"/>
+                <img src="3185f7b368b8cda43e3dd35db80ee18a45777a9cad67ecf0494f4d4fb85f4139.png" title=" Administrator clicks on Option Payment (completed)" width="1920"/>
+                <img src="3185f7b368b8cda43e3dd35db80ee18a45777a9cad67ecf0494f4d4fb85f4139.png" title=" Administrator clicks on select TypePayment" width="1920"/>
+                <img src="96415c3291b462ff7ecf9631a5d3dd216754fa60e2c2aad2b56f23f6ce1c8a80.png" title=" Administrator clicks on select TypePayment (completed)" width="1920"/>
+                <img src="96415c3291b462ff7ecf9631a5d3dd216754fa60e2c2aad2b56f23f6ce1c8a80.png" title=" Administrator clicks on Option Money" width="1920"/>
+                <img src="503070881d8b885bd1538f6e5ed8d5f777c22090d79969f370b8fbe7e80eb48b.png" title=" Administrator clicks on Option Money (completed)" width="1920"/>
+                <img src="503070881d8b885bd1538f6e5ed8d5f777c22090d79969f370b8fbe7e80eb48b.png" title=" Administrator clicks on Select Money" width="1920"/>
+                <img src="2194cdef8478f762ac122e3484658a852adefa3fdfe92bb8ec9ef83ddad20fdf.png" title=" Administrator clicks on Select Money (completed)" width="1920"/>
+                <img src="2194cdef8478f762ac122e3484658a852adefa3fdfe92bb8ec9ef83ddad20fdf.png" title=" Administrator enters '565404132' into Option Value Collection" width="1920"/>
+                <img src="d91a5d1dbb0c5df2ec9a1c91d52a5d3aae23a16b8e10bc12cddbd8cb0c49b962.png" title=" Administrator enters '565404132' into Option Value Collection (completed)" width="1920"/>
+                <img src="d91a5d1dbb0c5df2ec9a1c91d52a5d3aae23a16b8e10bc12cddbd8cb0c49b962.png" title=" Administrator clicks on OptionChanel Collection" width="1920"/>
+                <img src="4416788c9dad81f0a4e4ea2ceeea9893c74bdf56068ce57596bd45148438cfb4.png" title=" Administrator clicks on OptionChanel Collection (completed)" width="1920"/>
+                <img src="4416788c9dad81f0a4e4ea2ceeea9893c74bdf56068ce57596bd45148438cfb4.png" title=" Administrator clicks on Select Justificacion Registration" width="1920"/>
+                <img src="61cfe9c086f9056bba9eefb7b2cb050144c7148c78ceeb66c85386ac7a403586.png" title=" Administrator clicks on Select Justificacion Registration (completed)" width="1920"/>
+                <img src="61cfe9c086f9056bba9eefb7b2cb050144c7148c78ceeb66c85386ac7a403586.png" title=" Administrator clicks on Option Justificaction Registration" width="1920"/>
+                <img src="3451498389d3639be6b9fbd910cd8a9aa564694f52b7f5f10074b919f495ff07.png" title=" Administrator clicks on Option Justificaction Registration (completed)" width="1920"/>
+                <img src="3451498389d3639be6b9fbd910cd8a9aa564694f52b7f5f10074b919f495ff07.png" title=" Administrator clicks on Select Option Channel" width="1920"/>
+                <img src="4ce74416c650ba508554fde75b062264ec97941b38f406c0b3e4fb80b7e3cea8.png" title=" Administrator clicks on Select Option Channel (completed)" width="1920"/>
+                <img src="4ce74416c650ba508554fde75b062264ec97941b38f406c0b3e4fb80b7e3cea8.png" title=" Administrator clicks on Registration Collection" width="1920"/>
+                <img src="4ca21ab0d90e2d8f1728f948b28e2aeb62c10a0116cbd1d1a8db6be90d3d4728.png" title=" Administrator clicks on Registration Collection (completed)" width="1920"/>
+                <img src="4ca21ab0d90e2d8f1728f948b28e2aeb62c10a0116cbd1d1a8db6be90d3d4728.png" title=" Administrator clicks on Select Registration Confirm" width="1920"/>
+                <img src="c47c7950f733cadc18dfb83bbd91bccb77b10a5a33cc0c1a6f50193d2701474a.png" title=" Administrator clicks on Select Registration Confirm (completed)" width="1920"/>
+                <img src="c47c7950f733cadc18dfb83bbd91bccb77b10a5a33cc0c1a6f50193d2701474a.png" title=" Administrator create collection (completed)" width="1920"/>
+                <img src="c47c7950f733cadc18dfb83bbd91bccb77b10a5a33cc0c1a6f50193d2701474a.png" title=" Administrator wait" width="1920"/>
+                <img src="02a49ee40ee0135b5d518d8b37e0ca3031759cd96188aece646e05fd015e4b0c.png" title=" Administrator wait (completed)" width="1920"/>
+                <img src="02a49ee40ee0135b5d518d8b37e0ca3031759cd96188aece646e05fd015e4b0c.png" title=" When El usuario crea un recaudo manual uno a uno con los siguientes datos
+| value | receptionTime | receptionDate | clientReferent | clientBeneficiary | payment | collectionChannel |
+| 565404132 | 12:00 A.M | 12192022 | 8506902438 | 8506902438 | Efectivo | Sucursal virtual empresas | (completed)" width="1920"/>
+                <img src="02a49ee40ee0135b5d518d8b37e0ca3031759cd96188aece646e05fd015e4b0c.png" title=" Then Deberia de visualizar  las 5 obligaciones en estado cancelado en la base de datos de SAF" width="1920"/>
+                <img src="02a49ee40ee0135b5d518d8b37e0ca3031759cd96188aece646e05fd015e4b0c.png" title=" Then validate the records of ogligations the in data base$$ lambda$453/608392736 should be (true)" width="1920"/>
+                <img src="02a49ee40ee0135b5d518d8b37e0ca3031759cd96188aece646e05fd015e4b0c.png" title=" Then Deberia de visualizar  las 5 obligaciones en estado cancelado en la base de datos de SAF (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.10</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">ms_income</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="abeb9a99bb6cc81ff71da478127126803702a92136ea22afe74d51e7e9bc41e5.html">Create Payment Application</a></span>
+                > <span class="truncate-60"><a
+                    href="8f468ca867144cceb996a26429a98e2374014261cd77ecabd438cda06fca0657.html">Realizar anulacion de un aplicacion de pago realizado de forma manual uno a uno que simulan el proceso de aplicacion de pago </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 19-12-2022 17:49</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Create Payment Application </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                As a Financial Services Management<br />
+i need create to collections on the page
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="a80a32586dfec3fd69a71a38672eb7e0159c020c73f4262ce7bf7c4c9ddc291b.html">280090
+                                    (UserStory)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-times-circle failure-icon fa-2x' title='FAILURE'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="failing-color">Realizar anulacion de un aplicacion de pago realizado de forma manual uno a uno que simulan el proceso de aplicacion de pago
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Assertion error: Expected: is (true) but: was (false)</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>java.lang.AssertionError </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>co.com.bancolombia.certification.saf.stepdefinitions.createincome.CollectionStepDefinitions.deberiaVerLasObligacionesEnSusEstadosInicialesAntesDeRealizarElProcesoDeAplicacionDePago(CollectionStepDefinitions.java:143)<br />✽.Deberia ver las obligaciones en sus estados iniciales antes de realizar el proceso de aplicacion de pago(src/test/resources/features/Collections/create_collections.feature:38)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="pagesource9033286235906200426.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="63ef44836029ca07a6c8c9882d6412798b15bf5909602fa4796c58f4daacc6c8.png" title=" Given That the user enter to the page" width="1920"/>
+                <img src="63ef44836029ca07a6c8c9882d6412798b15bf5909602fa4796c58f4daacc6c8.png" title=" Administrator opens the https://saf-qa.apps.ambientesbc.com/disbursements" width="1920"/>
+                <img src="63ef44836029ca07a6c8c9882d6412798b15bf5909602fa4796c58f4daacc6c8.png" title=" Given That the user enter to the page (completed)" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" When El usuario  busca y anula  la aplicacion de pago con los siguientes datos
+| incomeDate | typeAnnulment | reasonAnnulment | clientReferent | clientBeneficiary | receptionDate |
+| 12192022 | Ingreso no abonado en cuenta | Prueba | 8506902438 | 8506902438 | 12192022 |" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator wait" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator wait (completed)" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator search income" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator wait" width="1920"/>
+                <img src="a985678da1fc4b6c4b6f7f9016d4d9408e201a318f464977ca5390a7600cb3e7.png" title=" Administrator wait (completed)" width="1920"/>
+                <img src="2b085fedd694cafcff134a1a7903703a1689c2aa4d046e0825e54701ad97049a.png" title=" Administrator clicks on option income register" width="1920"/>
+                <img src="9e75f553bf623385e8194823448efae99a5fff3184de91b8069f64b4f1e38a3f.png" title=" Administrator clicks on option income register (completed)" width="1920"/>
+                <img src="41d6fedf759ee465668c7a5816aa88b260e47b59854aee06bf816cd1b49f65b3.png" title=" Administrator enters '12192022' into date income field" width="1920"/>
+                <img src="52daf07f582c50d542ec54bcd8bb2738c784532368d67356dcd469f4db082875.png" title=" Administrator enters '12192022' into date income field (completed)" width="1920"/>
+                <img src="52daf07f582c50d542ec54bcd8bb2738c784532368d67356dcd469f4db082875.png" title=" Administrator clicks on button referent client" width="1920"/>
+                <img src="891eb9a5dc0764519be84fec818e4264067c194a38455b029c1de00bc5faf971.png" title=" Administrator clicks on button referent client (completed)" width="1920"/>
+                <img src="891eb9a5dc0764519be84fec818e4264067c194a38455b029c1de00bc5faf971.png" title=" Administrator clicks on select referent client " width="1920"/>
+                <img src="9a77beffa880c8bb73ec0ddb16d915e25cea7011d33610f06279f7a8f98bb3aa.png" title=" Administrator clicks on select referent client  (completed)" width="1920"/>
+                <img src="9a77beffa880c8bb73ec0ddb16d915e25cea7011d33610f06279f7a8f98bb3aa.png" title=" Administrator clicks on button beneficiary client" width="1920"/>
+                <img src="447c948789548d1841b71cf15e935a8743cb1298d381c3f1a21210cd10bb665e.png" title=" Administrator clicks on button beneficiary client (completed)" width="1920"/>
+                <img src="447c948789548d1841b71cf15e935a8743cb1298d381c3f1a21210cd10bb665e.png" title=" Administrator clicks on Select client beneficiary" width="1920"/>
+                <img src="8cea7bbe80aa35d809ef5a451797a4f1665146cbda1f8f8590de3f4395888289.png" title=" Administrator clicks on Select client beneficiary (completed)" width="1920"/>
+                <img src="8cea7bbe80aa35d809ef5a451797a4f1665146cbda1f8f8590de3f4395888289.png" title=" Administrator clicks on option search advanced" width="1920"/>
+                <img src="ee29a85fe53bad9f01d5c0b0f2ea2ca806cddc69d0aa74cc58b651ab9398a70f.png" title=" Administrator clicks on option search advanced (completed)" width="1920"/>
+                <img src="ee29a85fe53bad9f01d5c0b0f2ea2ca806cddc69d0aa74cc58b651ab9398a70f.png" title=" Administrator clicks on button state obligation" width="1920"/>
+                <img src="3a2e47c00caee71f07d3fab82d710a0258b460d0a4d49f7a6a80f501cc4c841c.png" title=" Administrator clicks on button state obligation (completed)" width="1920"/>
+                <img src="3a2e47c00caee71f07d3fab82d710a0258b460d0a4d49f7a6a80f501cc4c841c.png" title=" Administrator clicks on select state obligation" width="1920"/>
+                <img src="1d9130d5ab318614b16695f195a87a267cc8072ad986cb42b2ba6aa1ed93ecf9.png" title=" Administrator clicks on select state obligation (completed)" width="1920"/>
+                <img src="3b2ff5f8a0c7c52967c8eddffdb694070ee6e08998bd261b7a682a05b1995206.png" title=" Administrator clicks on button search" width="1920"/>
+                <img src="c7e101bf4de76e741e1d5b55e015059ca4b163f35daa52b706f90ea37baa3f88.png" title=" Administrator clicks on button search (completed)" width="1920"/>
+                <img src="d300441ef6d870ceaea96d28971f418a1db58d0ae4231b82752ffdd8555ca21a.png" title=" Administrator search income (completed)" width="1920"/>
+                <img src="d300441ef6d870ceaea96d28971f418a1db58d0ae4231b82752ffdd8555ca21a.png" title=" Administrator search annulment" width="1920"/>
+                <img src="bcdd7ac088024f896c33090b3c48490a911e1d9f0f0a7ff1ded34354d2e1e642.png" title=" Administrator clicks on option select  collection" width="1920"/>
+                <img src="8613a4fdae99d510aaada5fe1675953da19921bee37d812977b7e3a06bc8bd2f.png" title=" Administrator clicks on option select  collection (completed)" width="1920"/>
+                <img src="8613a4fdae99d510aaada5fe1675953da19921bee37d812977b7e3a06bc8bd2f.png" title=" Administrator enters '12192022' into input payment date" width="1920"/>
+                <img src="836e1b81709e5025c28222f012fedbcb4955f0936299068b72faede1050a0598.png" title=" Administrator enters '12192022' into input payment date (completed)" width="1920"/>
+                <img src="836e1b81709e5025c28222f012fedbcb4955f0936299068b72faede1050a0598.png" title=" Administrator clicks on button search annulment" width="1920"/>
+                <img src="53f63a16f0c395c4155c296319c47d0813c1c0ce2e63aa63cb402bcbbcdde76c.png" title=" Administrator clicks on button search annulment (completed)" width="1920"/>
+                <img src="53f63a16f0c395c4155c296319c47d0813c1c0ce2e63aa63cb402bcbbcdde76c.png" title=" Administrator clicks on Option Annulment" width="1920"/>
+                <img src="e0c087a3f2bd82b20b525aab4ee0ce203d1d054451548a8fefe31f52be35795d.png" title=" Administrator clicks on Option Annulment (completed)" width="1920"/>
+                <img src="d11b813c7a07d9ba30e9f770542a410f572b93b7068a9ffaed7f5feffe6766a4.png" title=" Administrator clicks on Click Annulment" width="1920"/>
+                <img src="fc0c0a1215f4b1337bb68b20f88df184c36c34ff0beacd859003d02829918d53.png" title=" Administrator clicks on Click Annulment (completed)" width="1920"/>
+                <img src="fc0c0a1215f4b1337bb68b20f88df184c36c34ff0beacd859003d02829918d53.png" title=" Administrator clicks on Option Intruccion" width="1920"/>
+                <img src="d90f5f0ab484f131b3214b5b17aa55515fbc88d0c3d2dbb828fa77fe788faf3e.png" title=" Administrator clicks on Option Intruccion (completed)" width="1920"/>
+                <img src="d90f5f0ab484f131b3214b5b17aa55515fbc88d0c3d2dbb828fa77fe788faf3e.png" title=" Administrator clicks on Text Instruccion" width="1920"/>
+                <img src="f90abbcbb221c791c547c6f9176e8a9df909c21fbf5d1bded373f41718befe67.png" title=" Administrator clicks on Text Instruccion (completed)" width="1920"/>
+                <img src="f90abbcbb221c791c547c6f9176e8a9df909c21fbf5d1bded373f41718befe67.png" title=" Administrator enters 'Prueba' into Annulment Description" width="1920"/>
+                <img src="a87c2ff704bc4c788ddb089bc1893e51aa500065ab3cb314bc95740957d3f0f6.png" title=" Administrator enters 'Prueba' into Annulment Description (completed)" width="1920"/>
+                <img src="a87c2ff704bc4c788ddb089bc1893e51aa500065ab3cb314bc95740957d3f0f6.png" title=" Administrator clicks on Button Continue" width="1920"/>
+                <img src="bd49c479f7edd68cf322b6e07bcb358611b5b9f5081b3d34167b8b8cb802c0cc.png" title=" Administrator clicks on Button Continue (completed)" width="1920"/>
+                <img src="bd49c479f7edd68cf322b6e07bcb358611b5b9f5081b3d34167b8b8cb802c0cc.png" title=" Administrator search annulment (completed)" width="1920"/>
+                <img src="bd49c479f7edd68cf322b6e07bcb358611b5b9f5081b3d34167b8b8cb802c0cc.png" title=" Administrator wait" width="1920"/>
+                <img src="0d0ba0a6534a57eefedddc9cf2d771874148227be0bf63e950e45700a9ab2e8b.png" title=" Administrator wait (completed)" width="1920"/>
+                <img src="0d0ba0a6534a57eefedddc9cf2d771874148227be0bf63e950e45700a9ab2e8b.png" title=" Administrator collection annulment" width="1920"/>
+                <img src="e4fc5d6ea95edfb8ea716bbfe84e7d5236a8ef19edca86873ec22ca327b2bc04.png" title=" Administrator clicks on option income register" width="1920"/>
+                <img src="83d36370d193ab0802a9103869dd519bda3d4998f9aff4721c79f58add444ec8.png" title=" Administrator clicks on option income register (completed)" width="1920"/>
+                <img src="4ac5e50925a20aadd68975262e4f07fc9e4938507241f131e3535ec884dd146a.png" title=" Administrator clicks on option search advanced" width="1920"/>
+                <img src="009819cd2d2829ac16d48ca015d98866745ce96b2043885a1056bf96435e34c2.png" title=" Administrator clicks on option search advanced (completed)" width="1920"/>
+                <img src="3daa11c645cfd4c9745ccaa39cd575bc680353782de7b00146cb78c3f87b648a.png" title=" Administrator enters '2022121900009' into InputNumberColection" width="1920"/>
+                <img src="eaaa96b1023e64dd178a5f0660d5afdd8cb0dcda4c126712a5520dfb1acdac3e.png" title=" Administrator enters '2022121900009' into InputNumberColection (completed)" width="1920"/>
+                <img src="eaaa96b1023e64dd178a5f0660d5afdd8cb0dcda4c126712a5520dfb1acdac3e.png" title=" Administrator clicks on button search" width="1920"/>
+                <img src="2d0f9d58db871c6758cd04cffaa131b7a89e68a5be3d971d9d1500777e6327d5.png" title=" Administrator clicks on button search (completed)" width="1920"/>
+                <img src="815928ba772b82296b8c6598e33277d597f837912a9c0308b1717ae9d7535774.png" title=" Administrator clicks on button  annulment  income" width="1920"/>
+                <img src="6a9b630456030704d7e43184a93f9de60398060da5c45229a9391e2964db3c58.png" title=" Administrator clicks on button  annulment  income (completed)" width="1920"/>
+                <img src="6a9b630456030704d7e43184a93f9de60398060da5c45229a9391e2964db3c58.png" title=" Administrator clicks on button  annulment  income" width="1920"/>
+                <img src="ac217394402472d74a25cd84c9fba91f11b3ab72103696282ce76e9aeee5880b.png" title=" Administrator clicks on button  annulment  income (completed)" width="1920"/>
+                <img src="ac217394402472d74a25cd84c9fba91f11b3ab72103696282ce76e9aeee5880b.png" title=" Administrator clicks on button  select causal annulment" width="1920"/>
+                <img src="9d6c8cf2f2215591b57db8b31ae56c881ad2b2661a6c4c7d84991f7c6b4ade2d.png" title=" Administrator clicks on button  select causal annulment (completed)" width="1920"/>
+                <img src="9d6c8cf2f2215591b57db8b31ae56c881ad2b2661a6c4c7d84991f7c6b4ade2d.png" title=" Administrator clicks on select causal annulment" width="1920"/>
+                <img src="b3187901b3f71f63a1dd9050a94cd96f7029617e0164c977863a37b7e127c34f.png" title=" Administrator clicks on select causal annulment (completed)" width="1920"/>
+                <img src="b3187901b3f71f63a1dd9050a94cd96f7029617e0164c977863a37b7e127c34f.png" title=" Administrator clicks on button  annulment payment aplication" width="1920"/>
+                <img src="bcc45e14aa613e37c9c920e960f12f0f7a766945767803d57a9a07b6968c1892.png" title=" Administrator clicks on button  annulment payment aplication (completed)" width="1920"/>
+                <img src="bcc45e14aa613e37c9c920e960f12f0f7a766945767803d57a9a07b6968c1892.png" title=" Administrator clicks on button  annulment payment aplication" width="1920"/>
+                <img src="95cfa8f11dce6bc68e0719f8dc64d4828978977f79149965c3df3354bce73ac3.png" title=" Administrator clicks on button  annulment payment aplication (completed)" width="1920"/>
+                <img src="95cfa8f11dce6bc68e0719f8dc64d4828978977f79149965c3df3354bce73ac3.png" title=" Administrator collection annulment (completed)" width="1920"/>
+                <img src="95cfa8f11dce6bc68e0719f8dc64d4828978977f79149965c3df3354bce73ac3.png" title=" When El usuario  busca y anula  la aplicacion de pago con los siguientes datos
+| incomeDate | typeAnnulment | reasonAnnulment | clientReferent | clientBeneficiary | receptionDate |
+| 12192022 | Ingreso no abonado en cuenta | Prueba | 8506902438 | 8506902438 | 12192022 | (completed)" width="1920"/>
+                <img src="9e00f911d49d23f39247e3284f662ec545561c681b85515612c818f22dd97b33.png" title=" Then Deberia ver las obligaciones en sus estados iniciales antes de realizar el proceso de aplicacion de pago" width="1920"/>
+                <img src="9e00f911d49d23f39247e3284f662ec545561c681b85515612c818f22dd97b33.png" title=" Then validate the records of ogligations the in data base$$ lambda$445/1693658782 should be (true)" width="1920"/>
+                <img src="9e00f911d49d23f39247e3284f662ec545561c681b85515612c818f22dd97b33.png" title=" Then validate the records of ogligations the in data base$$ lambda$445/1693658782 should be (true) (completed): <span class='failing-color'>FAILURE</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.10</span>
+</div>
+</body>
+</html>

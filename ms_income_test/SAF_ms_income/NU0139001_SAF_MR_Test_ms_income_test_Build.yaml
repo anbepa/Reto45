@@ -1,0 +1,95 @@
+name: $(Build.SourceBranchName).$(date:yyyyMMdd)$(rev:.r)
+variables:
+  componentName: 'ms_income_test' #hace referencia al nombre del folder
+  NU: 'NU0139001'
+  cliProjectName: '$(NU)_SAF_MR_Test'
+  subComponentName: 'SAF_ms_income' #Se modifica este es projectName
+  repo: 'SAF_MR_Test'
+  
+  
+trigger:
+  branches:
+    include:
+      - refs/heads/trunk
+      - feature/*
+  paths:
+    include:
+      - 'ms_income_test/*'
+resources:
+  repositories:
+    - repository: self
+      type: git
+      ref: refs/heads/trunk      
+jobs:
+  - job: Phase_1
+    displayName: Gradle Compilation CD
+    cancelTimeoutInMinutes: 1
+    pool:
+      name: Build
+      demands: java
+    steps:
+      - checkout: self
+        clean: true
+        persistCredentials: True
+      - task: SonarQubePrepare@4
+        displayName: 'Prepare analysis on SonarQube'
+        inputs:
+          SonarQube: 4d8b9639-7117-44e4-90ed-1ade1b5f4376
+          scannerMode: CLI
+          configMode: manual
+          cliProjectKey: '$(cliProjectName)_$(componentName)'
+          cliProjectName: '$(cliProjectName)_$(componentName)'
+          cliProjectVersion: '$(Build.BuildNumber)'
+          cliSources: '$(componentName)/$(subComponentName)'
+          extraProperties: |
+            sonar.language=java
+            sonar.sourseEncoding=UTF-8
+            sonar.branch.name= $(Build.SourceBranchName)
+            sonar.java.binaries=**/build/classes
+            sonar.java.libraries=**/build/libs
+            sonar.exclusions = **/*.gradle, **/*.json, **/*.xml, **/*.yaml 
+      - task: Gradle@2
+        displayName: 'gradlew build'
+        inputs:
+          gradleWrapperFile: '$(componentName)/$(subComponentName)/gradlew'
+          workingDirectory: '$(componentName)/$(subComponentName)'
+          tasks: 'clean build -x test'
+          publishJUnitResults: false
+        continueOnError: true
+
+      - task: SonarQubeAnalyze@4
+        displayName: 'Run Code Analysis'  
+        
+      - task: sonar-buildbreaker@8
+        displayName: 'Break build on quality gate failure'
+        inputs:
+          SonarQube: 4d8b9639-7117-44e4-90ed-1ade1b5f4376
+
+      - task: CopyFiles@2
+        displayName: 'Copy Files'
+        inputs:
+          SourceFolder: '$(componentName)/$(subComponentName)'
+          Contents:  |
+            **/*
+            !build/**
+            !target\**
+            !.git\**
+            !*\Documentos_de_pruebas\**
+          TargetFolder: '$(build.artifactstagingdirectory)'
+          CleanTargetFolder: true
+        condition: and(succeeded(), eq(variables['Build.SourceBranch'],'refs/heads/trunk'))
+
+      
+      - task: PublishBuildArtifacts@1
+        displayName: 'Publish Artifact: $(cliProjectName)'
+        inputs:
+          PathtoPublish: '$(componentName)/$(subComponentName)'
+          ArtifactName: '$(NU)_SAF_MR_Test_$(componentName)_E2E_Artifact'
+        #condition: and(succeeded(), eq(variables['Build.SourceBranch'],'refs/heads/trunk'))
+
+
+
+
+
+
+
