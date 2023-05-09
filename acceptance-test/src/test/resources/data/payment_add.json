@@ -1,0 +1,16 @@
+{
+
+  "client_beneficiary":"10543546372",
+  "client_reference":"10543546372",
+  "code_agreement":"ACH",
+  "code_justify":"Ingreso ME",
+  "currency":"COP",
+  "payment_channel":10,
+  "payment_city":"05001",
+  "payment_reception":"2022-11-23",
+  "payment_time":"00:00",
+  "payment_type":"CASH",
+  "value":100000,
+  "dualControl":false
+
+}

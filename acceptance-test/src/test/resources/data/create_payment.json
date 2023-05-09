@@ -1,0 +1,13 @@
+{
+  "payment_reception": "",
+  "payment_time": "",
+  "payment_city": "5001",
+  "client_reference": "220000105",
+  "client_beneficiary": "220000105",
+  "payment_type": "CASH",
+  "currency": "COP",
+  "value": 25000.2067,
+  "payment_channel": 2,
+  "code_agreement": "28413",
+  "code_justify": "Justification"
+}
