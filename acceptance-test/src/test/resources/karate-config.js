@@ -1,36 +1,38 @@
-function fn() {
-    var env = karate.env; // get java system property 'karate.env' in  build.gradle
+function config() {
+    var env = karate.env; // obtener la propiedad del sistema 'karate.env' en build.gradle
     karate.log('karate.env system property was:', env);
     karate.configure('ssl', true);
-    karate.configure('logPrettyResponse', false)
+    karate.configure('logPrettyResponse', false);
 
     if (!env) {
-        env = 'local'; // a custom 'intelligent' default
+        env = 'local'; // un valor predeterminado personalizado
     }
 
-    var config = { // base config JSON
+    var config = {
 
-        authKey: '#{AUTHKEY}#',
-        apiKey: 'api-key',
-        key: 'API Key'
     };
 
     if (env == 'dev') {
-        config.authKey
-        config.urlBase = 'https://financiacion-int-dev.apps.ambientesbc.com/saf';
+        config.urlBase = 'https://c7r0fy6wz3.execute-api.us-east-2.amazonaws.com/dev';
     } else if (env == 'cer') {
-        config.authKey
-        config.urlBase = 'https://financiacion-int-qa.apps.ambientesbc.com/saf';
+        config.urlBase = 'https://c7r0fy6wz3.execute-api.us-east-2.amazonaws.com/dev';
     } else if (env == 'local') {
-        config.authKey
-        config.urlBase = 'https://financiacion-int-dev.apps.ambientesbc.com/saf';
-
+        config.urlBase = 'https://c7r0fy6wz3.execute-api.us-east-2.amazonaws.com/dev';
     }
 
-    karate.configure('headers', {Authorization: config.key, apiKey: config.authKey})
-    // don't waste time waiting for a connection or if servers don't respond within 5 seconds
+    var access_token = (function() {
+        var login_data = karate.read('classpath:data/login.json');
+        var response = karate.callSingle('classpath:karate/features/GetToken/token.feature', login_data[0]);
+        var token = response.response.access_token;
+        karate.configure('headers', { 'Authorization': 'Bearer ' + token });
+        //return token;
+    })();
+
     karate.configure('connectTimeout', 5000);
     karate.configure('readTimeout', 5000);
-
     return config;
 }
+
+
+
+
