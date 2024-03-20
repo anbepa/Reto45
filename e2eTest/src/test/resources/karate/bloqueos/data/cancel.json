@@ -1,0 +1,8 @@
+{
+  "payment_cancel":
+  [
+    {
+      "payment_id":11727,"causal_annulment_id":1,"justification":"Prueba"
+    }
+  ]
+}

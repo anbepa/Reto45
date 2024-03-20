@@ -1,0 +1,9 @@
+
+  {
+    "updateBlocksDetails": "UPDATE schsaf.tbl_client_blocks_details SET end_at = CURRENT_DATE, state = 'UNLOCKED', start_at = CURRENT_DATE, updated_at = to_timestamp(to_char(CURRENT_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS.MS'), 'YYYY-MM-DD HH24:MI:SS.MS') WHERE client_block_id IN (SELECT id FROM schsaf.tbl_client_blocks WHERE client_id = 1816) and block_type_code = 'AMM3' and state = 'BLOCKED' ;",
+    "updateBlocks": "UPDATE schsaf.tbl_client_blocks SET start_at = CURRENT_DATE , end_at = CURRENT_DATE, state = 'UNLOCKED' WHERE client_id = 1816 AND state  = 'BLOCKED';",
+    "getIncome": "select  consecutive_payment FROM schsaf.tbl_payment WHERE nit_payer = '999999422' ORDER BY created desc limit 1",
+    "getAplicationRecord": "SELECT pa.id AS payment_application_id FROM schsaf.tbl_payment p JOIN schsaf.tbl_payment_instruction pi ON p.id = pi.payment_id JOIN schsaf.tbl_payment_application pa ON pi.payment_application_id = pa.id WHERE p.nit_payer = '999999422' ORDER BY p.created desc LIMIT 1;",
+    "getPaymentRecord": "SELECT p.id AS payment_id FROM schsaf.tbl_payment p JOIN schsaf.tbl_payment_instruction pi ON p.id = pi.payment_id JOIN schsaf.tbl_payment_application pa ON pi.payment_application_id = pa.id WHERE p.nit_payer = '999999422' ORDER BY p.created desc LIMIT 1;"
+
+  }

@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "keys_clients": [
+        "shortNameClient",
+        "authorizeSharingInformation",
+        "selfRetainerOtherIncome",
+        "role",
+        "documentType",
+        "city",
+        "documentNumber",
+        "fullName",
+        "isBlockedPayment",
+        "withholdingAgent",
+        "regimeIVA",
+        "typeCustomer",
+        "customerStatus",
+        "dateLastUpdate",
+        "specialDial",
+        "registrationDate",
+        "id",
+        "vinculationDate",
+        "mdmKey",
+        "isRoleValidation",
+        "status"
+      ],
+      "keys_documentype": [
+        "CC",
+        "RC",
+        "CE",
+        "PASS",
+        "IEPJ",
+        "TI",
+        "NIT",
+        "IEPN",
+        "NUIP",
+        "FC"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "feedback": "Falla técnica en api de pagos"
+  },
+  {
+    "feedback": "Falla técnica en api de listas de control"
+  },
+  {
+    "feedback": "Bloqueo automático"
+  },
+  {
+    "feedback": "Bloqueo administrativo"
+  },
+  {
+    "feedback": "Fuera del horario hábil."
+  },
+  {
+    "feedback": "Límite no disponible"
+  },
+  {
+    "feedback": "Ha ocurrido un error. Por favor póngase en contacto con el administrador para obtener más información"
+  }
+]
+

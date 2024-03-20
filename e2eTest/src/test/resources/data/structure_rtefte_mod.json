@@ -1,0 +1,8 @@
+{
+  "assessmentType":1,
+  "description": "GMF para operaciones de desembolso a terceros",
+  "isPercentage": true,
+  "value": 9.9997,
+  "startDateValidity": "2027-04-01",
+  "endDateValidity": "2027-04-02"
+}

@@ -1,0 +1,41 @@
+{  "data": [
+  {
+    "keys_bank_account": [
+      "allowDebit",
+      "customerIdentificationType",
+      "bankCode",
+      "isAccountManual",
+      "clientId",
+      "accountName",
+      "accountType",
+      "bankName",
+      "hasNews",
+      "accountNumber",
+      "customerName",
+      "bankCity",
+      "accountStatus",
+      "customerIdentificationNumber",
+      "bankId",
+      "isClosed",
+      "allowCredit",
+      "lastUpdate",
+      "currency",
+      "bankAccountState",
+      "id",
+      "isPrincipal"
+    ],
+    "keys_documentype": [
+      "CC",
+      "RC",
+      "CE",
+      "PASS",
+      "IEPJ",
+      "TI",
+      "NIT",
+      "IEPN",
+      "NUIP",
+      "FC"
+    ]
+  }
+]
+}

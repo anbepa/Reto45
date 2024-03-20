@@ -1,0 +1,19 @@
+{  "data": [
+  {
+    "keys_quota_admin": [
+      "availableLimit",
+      "modality",
+      "clientName",
+      "approvedLimit",
+      "consumedLimit",
+      "id",
+      "state",
+      "isAdministrative",
+      "clientDocument",
+      "updated",
+      "platform",
+      "autoretainer"
+    ]
+  }
+]
+}

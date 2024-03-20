@@ -1,0 +1,14 @@
+{
+  "client_beneficiary": "999999422",
+  "client_reference": "999999422",
+  "code_agreement": "230",
+  "code_justify": "Contingencia",
+  "currency": "COP",
+  "dualControl": false,
+  "payment_channel": 11,
+  "payment_city": "05001",
+  "payment_reception": "",
+  "payment_time": "15:59:04",
+  "payment_type": "CASH",
+  "value": 215515.44
+}

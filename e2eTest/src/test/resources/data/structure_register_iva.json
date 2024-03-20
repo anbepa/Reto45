@@ -1,0 +1,8 @@
+{
+  "assessmentType": 2,
+  "description": "IVA",
+  "isPercentage": true,
+  "value": 19,
+  "startDateValidity": "2026-06-30",
+  "endDateValidity": "2026-07-30"
+}
